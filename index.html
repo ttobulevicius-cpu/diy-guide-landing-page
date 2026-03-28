@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Phone Receptionist for Law Firms | aivertises.com</title>
+  <meta name="description" content="Build your own AI phone receptionist. Complete DIY guide for law firms — no coding required, all templates included. Never miss another lead.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1e3a8a;
+      --navy-dark: #152c6b;
+      --navy-light: #2d4fa8;
+      --orange: #f97316;
+      --orange-dark: #ea6a0a;
+      --orange-light: #fed7aa;
+      --white: #ffffff;
+      --off-white: #f8f7f4;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-400: #9ca3af;
+      --gray-600: #4b5563;
+      --gray-800: #1f2937;
+      --text: #111827;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+      --max-w: 1080px;
+      --radius: 4px;
+      --radius-lg: 10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ─── HEADER ─────────────────────────────────────── */
+    .site-header {
+      background: var(--navy);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+
+    .logo span {
+      color: var(--orange);
+    }
+
+    .header-badge {
+      background: rgba(249,115,22,0.15);
+      border: 1px solid rgba(249,115,22,0.4);
+      color: var(--orange-light);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+    }
+
+    /* ─── HERO ───────────────────────────────────────── */
+    .hero {
+      background: var(--navy);
+      background-image:
+        radial-gradient(ellipse 80% 60% at 110% 50%, rgba(249,115,22,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at -10% 60%, rgba(45,79,168,0.5) 0%, transparent 55%);
+      padding: 80px 0 90px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 360px;
+      height: 360px;
+      border: 1px solid rgba(249,115,22,0.12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -40px;
+      width: 260px;
+      height: 260px;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(249,115,22,0.12);
+      border: 1px solid rgba(249,115,22,0.3);
+      color: #fdba74;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--orange);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.12;
+      color: var(--white);
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: #fdba74;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.72);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8rem;
+      font-weight: 400;
+    }
+
+    .trust-item svg {
+      flex-shrink: 0;
+      color: var(--orange);
+    }
+
+    /* ─── FORM CARD ──────────────────────────────────── */
+    .form-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 32px 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.28), 0 4px 16px rgba(0,0,0,0.12);
+    }
+
+    .form-card-headline {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .form-card-sub {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+
+    .form-card-sub strong {
+      color: var(--orange);
+    }
+
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .signup-form input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.15s, box-shadow 0.15s;
+      outline: none;
+    }
+
+    .signup-form input:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(30,58,138,0.08);
+    }
+
+    .signup-form input::placeholder {
+      color: var(--gray-400);
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--orange);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+      box-shadow: 0 4px 12px rgba(249,115,22,0.35);
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: var(--orange-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(249,115,22,0.42);
+    }
+
+    .btn-primary:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.75;
+      cursor: not-allowed;
+    }
+
+    .btn-loading { display: none; }
+    .btn-primary.is-loading .btn-label { display: none; }
+    .btn-primary.is-loading .btn-loading { display: inline; }
+
+    .form-error {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #dc2626;
+      font-size: 0.8rem;
+      padding: 8px 12px;
+      border-radius: var(--radius);
+      display: none;
+    }
+
+    .form-error.visible { display: block; }
+
+    .form-disclaimer {
+      font-size: 0.72rem;
+      color: var(--gray-400);
+      text-align: center;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    .form-spots {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #dc2626;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .form-spots::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: #dc2626;
+      border-radius: 50%;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    /* ─── SECTION BASE ───────────────────────────────── */
+    section { padding: 72px 0; }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+      font-weight: 700;
+      line-height: 1.18;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+
+    .section-title em {
+      font-style: italic;
+    }
+
+    /* ─── PROBLEM ────────────────────────────────────── */
+    .problem {
+      background: var(--off-white);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .problem-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .problem-intro { max-width: 460px; }
+
+    .problem-intro .section-title {
+      margin-bottom: 20px;
+    }
+
+    .problem-body {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--gray-600);
+      line-height: 1.75;
+    }
+
+    .problem-stat {
+      margin-top: 28px;
+      padding: 20px 22px;
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--orange);
+    }
+
+    .problem-stat-number {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .problem-stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.65);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    .problem-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .problem-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 22px 22px 22px 20px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .problem-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      transform: translateX(3px);
+    }
+
+    .problem-icon {
+      width: 42px;
+      height: 42px;
+      background: #fef3ea;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+
+    .problem-card-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+
+    .problem-card-text {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* ─── SOLUTION ───────────────────────────────────── */
+    .solution {
+      background: var(--white);
+    }
+
+    .solution-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 52px;
+    }
+
+    .solution-header .section-title {
+      margin-bottom: 14px;
+    }
+
+    .solution-header p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .solution-item {
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 24px 22px;
+      position: relative;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .solution-item:hover {
+      box-shadow: 0 6px 24px rgba(30,58,138,0.08);
+      border-color: rgba(30,58,138,0.2);
+    }
+
+    .solution-check {
+      width: 28px;
+      height: 28px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .solution-check svg {
+      color: var(--white);
+    }
+
+    .solution-item-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .solution-item-text {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* ─── PRICING ────────────────────────────────────── */
+    .pricing {
+      background: var(--navy);
+      background-image: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(249,115,22,0.07) 0%, transparent 60%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -100px;
+      transform: translateY(-50%);
+      width: 400px;
+      height: 400px;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .pricing-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing-left .section-label { color: #fdba74; }
+    .pricing-left .section-title { color: var(--white); margin-bottom: 20px; }
+
+    .pricing-detail {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .pricing-perks {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pricing-perk {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 300;
+    }
+
+    .pricing-perk svg { color: var(--orange); flex-shrink: 0; }
+
+    .pricing-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .pricing-original {
+      font-size: 0.95rem;
+      color: var(--gray-400);
+      text-decoration: line-through;
+      text-decoration-color: #dc2626;
+      margin-bottom: 4px;
+    }
+
+    .pricing-amount {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+
+    .pricing-currency {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--navy);
+      align-self: flex-start;
+      margin-top: 6px;
+    }
+
+    .pricing-number {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .pricing-saving {
+      display: inline-block;
+      background: #fef3ea;
+      color: var(--orange-dark);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    .pricing-divider {
+      height: 1px;
+      background: var(--gray-200);
+      margin: 20px 0;
+    }
+
+    .pricing-details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .pricing-detail-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.83rem;
+      color: var(--gray-600);
+    }
+
+    .pricing-detail-item svg { color: var(--navy); flex-shrink: 0; }
+
+    .pricing-scarcity {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 0.78rem;
+      color: #dc2626;
+      font-weight: 500;
+    }
+
+    /* ─── CTA SECTION ────────────────────────────────── */
+    .cta-section {
+      background: var(--off-white);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .cta-left .section-title { margin-bottom: 16px; }
+
+    .cta-left p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--gray-600);
+      line-height: 1.75;
+    }
+
+    .cta-form-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 32px 28px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+
+    /* ─── GUARANTEE ──────────────────────────────────── */
+    .guarantee {
+      background: var(--white);
+    }
+
+    .guarantee-inner {
+      display: flex;
+      align-items: center;
+      gap: 56px;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 44px 40px;
+      border: 2px solid var(--gray-200);
+      border-radius: 16px;
+      position: relative;
+    }
+
+    .guarantee-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .guarantee-icon svg {
+      color: var(--white);
+    }
+
+    .guarantee-tag {
+      position: absolute;
+      top: -14px;
+      left: 40px;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+    }
+
+    .guarantee-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .guarantee-text {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────── */
+    footer {
+      background: var(--navy-dark);
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .footer-logo span { color: var(--orange); }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: rgba(255,255,255,0.75); }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+      width: 100%;
+    }
+
+    /* ─── SCROLL ANIMATIONS ──────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner,
+      .problem-layout,
+      .pricing-inner,
+      .cta-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero { padding: 52px 0 48px; }
+
+      .hero h1 { font-size: 2.2rem; }
+
+      .form-card {
+        max-width: 480px;
+      }
+
+      .solution-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .guarantee-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+        padding: 36px 28px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 52px 0; }
+
+      .container { padding: 0 18px; }
+
+      .solution-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 { font-size: 1.9rem; }
+
+      .section-title { font-size: 1.7rem; }
+
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+
+      .header-badge { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── HEADER ──────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">ai<span>vertises</span></div>
+        <div class="header-badge">&#x25CF; Early Access — 50 Spots</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── HERO ────────────────────────────────────── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-eyebrow">For Solo &amp; Small Law Firms</div>
+          <h1>Build Your Own AI Phone Receptionist<br><em>And Never Miss Another Lead</em></h1>
+          <p class="hero-sub">Complete DIY guide for law firms — no coding required, all templates included. Set it up once and let it work while you focus on winning cases.</p>
+          <div class="hero-trust">
+            <div class="trust-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              14-Day Money-Back Guarantee
+            </div>
+            <div class="trust-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Ships in 2 Weeks
+            </div>
+            <div class="trust-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              No Monthly Agency Fees
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Form Card -->
+        <div class="form-card reveal">
+          <div class="form-spots">Only 50 spots at this price</div>
+          <div class="form-card-headline">Get Early Access — 50% Off</div>
+          <p class="form-card-sub">Join the waitlist now. <strong>€99 instead of €199</strong> for the first 50 law firms.</p>
+
+          <form class="signup-form" id="hero-form" novalidate>
+            <input type="email" name="email" placeholder="Your email address" required autocomplete="email">
+            <input type="text" name="name" placeholder="Your first name (optional)" autocomplete="given-name">
+            <button type="submit" class="btn-primary">
+              <span class="btn-label">Get 50% Off — Join Waitlist</span>
+              <span class="btn-loading">Saving your spot…</span>
+            </button>
+            <p class="form-error" id="hero-error"></p>
+          </form>
+
+          <p class="form-disclaimer">No spam, ever. Unsubscribe anytime. Your information is kept private.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROBLEM ──────────────────────────────────── -->
+  <section class="problem">
+    <div class="container">
+      <div class="problem-layout">
+        <div class="problem-intro reveal">
+          <div class="section-label">The Problem</div>
+          <h2 class="section-title">You're Losing Cases<br><em>to Voicemail</em></h2>
+          <p class="problem-body">Every missed call is a potential client walking straight to your competitor. Law firm leads are time-sensitive — if you don't pick up, they move on. You don't need a full-time receptionist. You need a system that never sleeps.</p>
+          <div class="problem-stat">
+            <div class="problem-stat-number">62%</div>
+            <div class="problem-stat-label">of callers won't leave a voicemail.<br>They just call the next firm on Google.</div>
+          </div>
+        </div>
+
+        <div class="problem-cards reveal">
+          <div class="problem-card">
+            <div class="problem-icon">📵</div>
+            <div>
+              <div class="problem-card-title">After-Hours Calls Go Unanswered</div>
+              <p class="problem-card-text">Potential clients call at 9pm after seeing your ad. You're home with your family. They hang up and Google the next firm.</p>
+            </div>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-icon">💸</div>
+            <div>
+              <div class="problem-card-title">You're Paying for Leads You Don't Convert</div>
+              <p class="problem-card-text">You spend hundreds on Google Ads and SEO, then lose leads because there's no one to qualify them fast enough.</p>
+            </div>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-icon">🔄</div>
+            <div>
+              <div class="problem-card-title">Agencies Want $2,000+/Month</div>
+              <p class="problem-card-text">Existing AI receptionist services lock you into expensive monthly retainers. You're renting technology you could own.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SOLUTION ─────────────────────────────────── -->
+  <section class="solution">
+    <div class="container">
+      <div class="solution-header reveal">
+        <div class="section-label">What You Get</div>
+        <h2 class="section-title">Everything You Need to Go Live<br><em>in a Weekend</em></h2>
+        <p>A complete, step-by-step system. You set it up once, you own it forever — no ongoing subscriptions, no agencies, no technical expertise required.</p>
+      </div>
+
+      <div class="solution-grid">
+        <div class="solution-item reveal">
+          <div class="solution-check">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="solution-item-title">Complete Step-by-Step Setup Guide</div>
+          <p class="solution-item-text">Detailed walkthrough from account creation to live calls. No prior technical knowledge assumed.</p>
+        </div>
+
+        <div class="solution-item reveal">
+          <div class="solution-check">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="solution-item-title">Pre-Built AI Scripts &amp; Templates</div>
+          <p class="solution-item-text">Done-for-you call scripts tuned for law firm intake — greetings, qualification questions, and objection handling.</p>
+        </div>
+
+        <div class="solution-item reveal">
+          <div class="solution-check">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="solution-item-title">Calendar Integration Walkthrough</div>
+          <p class="solution-item-text">Connect the AI to your booking calendar so it schedules consultations automatically while you sleep.</p>
+        </div>
+
+        <div class="solution-item reveal">
+          <div class="solution-check">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="solution-item-title">Lead Qualification System</div>
+          <p class="solution-item-text">The AI asks the right questions and only routes serious prospects to your calendar — saving you hours each week.</p>
+        </div>
+
+        <div class="solution-item reveal">
+          <div class="solution-check">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="solution-item-title">After-Hours Call Handling</div>
+          <p class="solution-item-text">Never lose a lead to voicemail again. The system answers at 2am and books consultations for Monday morning.</p>
+        </div>
+
+        <div class="solution-item reveal">
+          <div class="solution-check">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="solution-item-title">You Own It — No Monthly Fees</div>
+          <p class="solution-item-text">One-time purchase. No agencies, no subscriptions. The system runs on your own accounts — $10–$40/month in direct tool costs max.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PRICING ───────────────────────────────────── -->
+  <section class="pricing">
+    <div class="container">
+      <div class="pricing-inner">
+        <div class="pricing-left reveal">
+          <div class="section-label">Pricing</div>
+          <h2 class="section-title" style="color:var(--white)">A One-Time Investment<br><em style="color:#fdba74">That Pays for Itself</em></h2>
+          <p class="pricing-detail">One new client from a call you would have missed more than covers the cost of this guide. We're keeping the launch price at €99 for the first 50 people only.</p>
+
+          <div class="pricing-perks">
+            <div class="pricing-perk">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Instant digital delivery
+            </div>
+            <div class="pricing-perk">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Lifetime access + all future updates
+            </div>
+            <div class="pricing-perk">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Compatible with any phone system
+            </div>
+            <div class="pricing-perk">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              14-day money-back guarantee
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing-card reveal">
+          <div class="pricing-badge">Launch Special — First 50 Only</div>
+          <div class="pricing-original">Regular price: €199</div>
+          <div class="pricing-amount">
+            <span class="pricing-currency">€</span>
+            <span class="pricing-number">99</span>
+          </div>
+          <div class="pricing-saving">You save €100 — 50% off</div>
+
+          <div class="pricing-divider"></div>
+
+          <div class="pricing-details-list">
+            <div class="pricing-detail-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Complete DIY setup guide
+            </div>
+            <div class="pricing-detail-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Pre-built call scripts &amp; templates
+            </div>
+            <div class="pricing-detail-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Calendar &amp; booking integration
+            </div>
+            <div class="pricing-detail-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Lead qualification system
+            </div>
+            <div class="pricing-detail-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Ships in 2 weeks from launch
+            </div>
+          </div>
+
+          <a href="#cta" class="btn-primary" style="display:block;text-align:center;padding:14px 20px;border-radius:4px;font-size:0.95rem;font-weight:600;">
+            Reserve My Spot Now
+          </a>
+          <p class="pricing-scarcity">&#9679; Only 50 spots at this price</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA REPEAT ────────────────────────────────── -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="cta-left reveal">
+          <div class="section-label">Reserve Your Spot</div>
+          <h2 class="section-title">Ready to Stop<br><em>Losing Leads?</em></h2>
+          <p>Join the waitlist and lock in your 50% launch discount. We'll email you the moment it's ready — and you only pay if you decide to proceed.</p>
+        </div>
+
+        <div class="cta-form-card reveal">
+          <div class="form-spots">50 early access spots — limited</div>
+          <div class="form-card-headline">Get 50% Off at Launch</div>
+          <p class="form-card-sub" style="margin-bottom:20px">Enter your email to join the waitlist. <strong>€99 instead of €199.</strong></p>
+
+          <form class="signup-form" id="cta-form" novalidate>
+            <input type="email" name="email" placeholder="Your email address" required autocomplete="email">
+            <input type="text" name="name" placeholder="Your first name (optional)" autocomplete="given-name">
+            <button type="submit" class="btn-primary">
+              <span class="btn-label">Get 50% Off — Join Waitlist</span>
+              <span class="btn-loading">Saving your spot…</span>
+            </button>
+            <p class="form-error" id="cta-error"></p>
+          </form>
+
+          <p class="form-disclaimer">No spam. Unsubscribe anytime. We respect your privacy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GUARANTEE ─────────────────────────────────── -->
+  <section class="guarantee">
+    <div class="container">
+      <div class="guarantee-inner reveal">
+        <div class="guarantee-tag">Our Promise</div>
+        <div class="guarantee-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <div class="guarantee-title">14-Day Money-Back Guarantee</div>
+          <p class="guarantee-text">If you follow the guide and don't feel it was worth every penny — email us within 14 days of purchase and we'll refund you in full, no questions asked. We're only interested in keeping customers who love the product. Your risk is zero.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">ai<span>vertises</span></div>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="mailto:hello@aivertises.com">Contact</a>
+        </div>
+        <p class="footer-copy">&copy; 2025 aivertises.com. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const WEBHOOK_URL = 'https://n8n.34.68.150.87.nip.io/webhook/waitlist';
+
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function setLoading(form, loading) {
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = loading;
+      if (loading) {
+        btn.classList.add('is-loading');
+      } else {
+        btn.classList.remove('is-loading');
+      }
+    }
+
+    function showError(form, msg) {
+      const el = form.querySelector('.form-error');
+      el.textContent = msg;
+      el.classList.add('visible');
+    }
+
+    function clearError(form) {
+      const el = form.querySelector('.form-error');
+      el.textContent = '';
+      el.classList.remove('visible');
+    }
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.currentTarget;
+      const email = form.querySelector('input[name="email"]').value.trim();
+      const name = form.querySelector('input[name="name"]').value.trim();
+
+      clearError(form);
+
+      if (!isValidEmail(email)) {
+        showError(form, 'Please enter a valid email address.');
+        form.querySelector('input[name="email"]').focus();
+        return;
+      }
+
+      setLoading(form, true);
+
+      try {
+        const res = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, name, source: 'aivertises.com' })
+        });
+
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+
+        window.location.href = 'thank-you.html';
+      } catch (err) {
+        console.error('Waitlist submit error:', err);
+        setLoading(form, false);
+        showError(form, 'Something went wrong. Please try again or email hello@aivertises.com.');
+      }
+    }
+
+    // Attach handlers to both forms
+    document.querySelectorAll('.signup-form').forEach(function(form) {
+      form.addEventListener('submit', handleSubmit);
+    });
+
+    // Scroll reveal animation
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
