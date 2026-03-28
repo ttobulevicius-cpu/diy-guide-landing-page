@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're On The Waitlist! | AIVertise</title>
+  <meta name="description" content="You've joined the waitlist. Pre-order now at 50% off.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --bg: #0a0a0a;
+      --text: #ffffff;
+      --text-dim: #a1a1a1;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --card-bg: #111111;
+      --border: #262626;
+      --success: #10b981;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    
+    .logo span { color: var(--accent); }
+    
+    /* Confirmation */
+    .confirmation {
+      padding: 80px 0 40px;
+      text-align: center;
+    }
+    
+    .check-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 2px solid var(--success);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    
+    .check-icon svg {
+      width: 32px;
+      height: 32px;
+      color: var(--success);
+    }
+    
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    
+    .subtitle {
+      font-size: 16px;
+      color: var(--text-dim);
+      margin-bottom: 40px;
+    }
+    
+    /* Upsell Card */
+    .upsell {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 40px;
+    }
+    
+    .upsell-badge {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 6px 12px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+    
+    .upsell h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    
+    .upsell-text {
+      color: var(--text-dim);
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+    
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    
+    .price-original {
+      font-size: 24px;
+      color: #666;
+      text-decoration: line-through;
+    }
+    
+    .price {
+      font-size: 48px;
+      font-weight: 700;
+    }
+    
+    .price-note {
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+    
+    .btn-preorder {
+      display: block;
+      width: 100%;
+      background: var(--accent);
+      color: white;
+      text-align: center;
+      padding: 16px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-bottom: 16px;
+      position: relative;
+      transform: translateY(0);
+      box-shadow: 
+        0 6px 20px rgba(59, 130, 246, 0.5),
+        0 2px 6px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .btn-preorder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .btn-preorder:hover {
+      background: var(--accent-hover);
+      transform: translateY(-3px);
+      box-shadow: 
+        0 10px 30px rgba(59, 130, 246, 0.6),
+        0 4px 10px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+    
+    .btn-preorder:hover::before {
+      opacity: 1;
+    }
+    
+    .btn-preorder:active {
+      transform: translateY(-1px);
+      box-shadow: 
+        0 4px 12px rgba(59, 130, 246, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    
+    .btn-secondary {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      text-align: center;
+      padding: 14px 24px;
+      font-size: 15px;
+      font-weight: 500;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    
+    .btn-secondary:hover {
+      border-color: #404040;
+      color: var(--text);
+    }
+    
+    /* What Happens Next */
+    .timeline {
+      padding: 40px 0;
+    }
+    
+    .timeline h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .timeline-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding: 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    
+    .timeline-number {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .timeline-content h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    
+    .timeline-content p {
+      font-size: 14px;
+      color: var(--text-dim);
+    }
+    
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+    }
+    
+    @media (max-width: 640px) {
+      .confirmation { padding: 60px 0 40px; }
+      h1 { font-size: 28px; }
+      .upsell { padding: 24px; }
+      .price { font-size: 40px; }
+    }
+    
+    /* Scroll Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .timeline-item {
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .timeline-item:nth-child(1) { transition-delay: 0.1s; }
+    .timeline-item:nth-child(2) { transition-delay: 0.2s; }
+    .timeline-item:nth-child(3) { transition-delay: 0.3s; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">ai<span>vertise</span></div>
+    </div>
+  </header>
+
+  <!-- Confirmation -->
+  <section class="confirmation">
+    <div class="container">
+      <div class="check-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <polyline points="20 6 9 17 4 12" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h1>You're On The Waitlist!</h1>
+      <p class="subtitle">Check your email for confirmation</p>
+    </div>
+  </section>
+
+  <!-- Upsell -->
+  <section>
+    <div class="container">
+      <div class="upsell fade-in">
+        <div class="upsell-badge">Limited Time Offer</div>
+        <h2>Want It Now? Pre-Order Today</h2>
+        <p class="upsell-text">Don't wait 2 weeks. Reserve your copy now and get instant access when it launches.</p>
+        
+        <div class="price-row">
+          <div class="price-original">€200</div>
+          <div class="price">€99</div>
+        </div>
+        <p class="price-note">You save €101 (50% off) — Ships in 2 weeks</p>
+        
+        <a href="https://buy.stripe.com/5kQdRb1xxaUY50Ea6tcwg00" class="btn-preorder">
+          Pre-Order Now — €99
+        </a>
+        <a href="#timeline" class="btn-secondary">I'll wait for the waitlist email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Happens Next -->
+  <section class="timeline" id="timeline">
+    <div class="container">
+      <h3>What Happens Next</h3>
+      
+      <div class="timeline-item">
+        <div class="timeline-number">1</div>
+        <div class="timeline-content">
+          <h4>Check Your Email</h4>
+          <p>We sent a confirmation to your inbox. Add us to your contacts so you don't miss updates.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-number">2</div>
+        <div class="timeline-content">
+          <h4>Course Launches in 2 Weeks</h4>
+          <p>We'll email you the moment it's ready with your exclusive 50% discount code.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-number">3</div>
+        <div class="timeline-content">
+          <h4>Get Instant Access</h4>
+          <p>Download the complete guide and start building your AI receptionist the same day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 aivertise.com — All rights reserved</p>
+    </div>
+  </footer>
+  <script>
+    // Scroll Animation Observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    // Observe all animated elements
+    document.querySelectorAll('.fade-in, .timeline-item').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
